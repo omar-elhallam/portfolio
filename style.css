@@ -7,10 +7,10 @@ body, html {
 
 body {
     background: linear-gradient(
-        to bottom left,
-        black 30%,
-        red 40%,
-        pink 50%
+        to top right,
+        black,
+        black,
+        red
     );
     display: flex;
     justify-content: center;
