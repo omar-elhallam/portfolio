@@ -6,7 +6,12 @@ body, html {
 }
 
 body {
-    background: linear-gradient(to bottom right, pink, red, black);
+    background: linear-gradient(
+        to bottom left,
+        black 30%,
+        red 40%,
+        pink 50%
+    );
     display: flex;
     justify-content: center;
     align-items: center;
