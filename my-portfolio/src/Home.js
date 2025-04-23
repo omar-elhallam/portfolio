@@ -72,7 +72,7 @@ function Home() {
       <section className="about">
         <h2>About Me</h2>
         <p>
-          I am Omar El Hallam, a Computer Science student at the University of Richmond with a passion for software development, music, and sports. I specialize in creating dynamic and immersive digital experiences.
+          I am Omar El Hallam, a Computer Science student, who studied at University of Richmond and College de paris, with a passion for software development, music, and sports. I specialize in creating dynamic and immersive digital experiences.
         </p>
       </section>
 

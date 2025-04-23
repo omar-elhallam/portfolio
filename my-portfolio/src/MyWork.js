@@ -18,7 +18,7 @@ const MyWork = () => {
         </div>
         <div className="mywork-card">
           <h3>Exakis Nelite</h3>
-          <p>February 2020 – March 2023</p>
+          <p>February 2020 – March 2020</p>
           <ul>
             <li>Explored the IT consulting industry through observation and hands-on learning.</li>
           </ul>
@@ -59,11 +59,15 @@ const MyWork = () => {
         <h2>Education</h2>
         <div className="mywork-card">
           <h3>Université de Richmond</h3>
-          <p>Bachelor's in Computer Science (August 2021 – May 2024)</p>
+          <p>Computer Science (August 2021 – May 2024)</p>
         </div>
         <div className="mywork-card">
           <h3>Lycée Maimonide</h3>
           <p>Baccalauréat Français Général avec Mention Bien (June 2021)</p>
+        </div>
+        <div className="mywork-card">
+          <h3>SAT</h3>
+          <p>Score of 770/800 in math | top 1% worldwide</p>
         </div>
       </div>
     </div>
