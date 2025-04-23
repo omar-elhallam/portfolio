@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found</title>
+    <script>
+      // Redirect all routes to index.html for GitHub Pages
+      const redirectToIndex = () => {
+        const pathname = window.location.pathname;
+        const redirectPath = pathname.startsWith('/my-portfolio') ? pathname.replace('/my-portfolio', '') : pathname;
+        window.location.replace('/my-portfolio' + redirectPath);
+      };
+
+      redirectToIndex();
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>
