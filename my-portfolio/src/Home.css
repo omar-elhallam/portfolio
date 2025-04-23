@@ -124,7 +124,7 @@ body {
     z-index: 4; /* Higher than background layers */
     padding: 4rem 2rem;
     color: white; /* Ensure text is visible */
-    margin-top: 300px; /* Lower the placement of the first section */
+    margin-top: 200px; /* Lower the placement of the first section */
   }
   
   .hero-title {
