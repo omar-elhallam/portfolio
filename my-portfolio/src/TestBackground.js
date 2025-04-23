@@ -9,7 +9,7 @@ function TestBackground() {
             const starsMidground = document.getElementById("stars-midground");
             const starsForeground = document.getElementById("stars-foreground");
 
-            if (nebula) nebula.style.backgroundPosition = `center calc(100px + ${scrollY * 0.2}px)`;
+            if (nebula) nebula.style.backgroundPosition = `center calc(200px + ${scrollY * 0.2}px)`;
             if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.5}px)`;
             if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.8}px)`;
         };

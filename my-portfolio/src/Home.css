@@ -260,21 +260,25 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat; /* <-- Add this */
   }
 
   #nebula {
     background-image: url("./assets/images/background/layers2/Nebula Blue.png");
     z-index: 1;
+    background-position: center 200px; /* Adjust the initial position */
   }
 
   #stars-midground {
     background-image: url("./assets/images/background/layers2/Stars Small_1.png");
     z-index: 2;
+    background-position: center 100px; /* Adjust the initial position */
   }
 
   #stars-foreground {
     background-image: url("./assets/images/background/layers2/Stars-Big_1_1_PC.png");
     z-index: 3;
+    background-position: center 100px; /* Adjust the initial position */
   }
 
   .content {
