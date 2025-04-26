@@ -347,6 +347,33 @@ body {
     position: relative;
     z-index: 5;
     animation: glow-pulse 5s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cosmic-title .line {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .cosmic-title span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .cosmic-title span:hover {
+    transform: scale(1.5); /* Grow the hovered letter */
+  }
+
+  .cosmic-title span:hover ~ span {
+    transform: scale(1.2); /* Grow the next letters slightly */
+  }
+
+  .cosmic-title span.previous:hover {
+    transform: scale(1.2); /* Grow the previous letter slightly */
   }
 
   /* Ripple distortion effect */
@@ -382,16 +409,4 @@ body {
       transform: translate(-50%, -50%) scale(1.1);
       opacity: 0;
     }
-  }
-
-  /* Ensure the particle canvas is positioned around the title */
-  .particle-canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 200px; /* Limit the height to focus around the title */
-    pointer-events: none; /* Ensure it doesn't block interactions */
-    z-index: 4; /* Place it above the background layers but below the title */
   }
