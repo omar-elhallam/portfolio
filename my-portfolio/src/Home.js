@@ -22,9 +22,9 @@ function Home() {
       const starsMidground = document.getElementById("stars-midground");
       const starsForeground = document.getElementById("stars-foreground");
 
-      if (nebula) nebula.style.backgroundPosition = `center calc(200px + ${scrollY * 0.2}px)`;
-      if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.5}px)`;
-      if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.8}px)`;
+      if (nebula) nebula.style.backgroundPosition = `center calc(500px + ${scrollY * 0.1}px)`;
+      if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.25}px)`;
+      if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.4}px)`;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -52,11 +52,10 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">Welcome to My Portfolio</h1>
-          <p className="hero-subtitle">Crafting immersive experiences with code and design</p>
-          <button className="cta-button">
-            <NavLink to="/MyWork" className="nav-link">Explore My Work</NavLink>
-          </button>
+          <h1 className="cosmic-title">
+            Crafting Immersive Experiences <br /> with Code & Design
+          </h1>
+          <NavLink to="/MyWork" className="cta-button nav-link">Explore My Work</NavLink>
         </div>
         <div className="hero-visuals">
           {/* Glowing Cards */}
