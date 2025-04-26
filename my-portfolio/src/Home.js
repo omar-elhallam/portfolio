@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// eslint-disable-next-line
 import { useNavigate, NavLink } from 'react-router-dom';
 import './Home.css';
+import CustomCursor from './components/Custom_Cursor';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -33,6 +33,7 @@ function Home() {
 
   return (
     <div className="portfolio dark-theme">
+      <CustomCursor /> {/* Add the custom cursor to the home page */}
       <div className="background-layer" id="nebula"></div>
       <div className="background-layer" id="stars-midground"></div>
       <div className="background-layer" id="stars-foreground"></div>
