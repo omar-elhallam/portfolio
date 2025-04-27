@@ -2,10 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 64px; /* Match the size of the rocket icon */
-  height: 64px;
+  width: 64px; /* Assuming the rocket image is 64px wide */
+  height: 64px; /* Assuming the rocket image is 64px tall */
   pointer-events: none;
-  z-index: 4; /* Adjust z-index to ensure proper layering */
-  transform: translate3d(-32px, -32px, 0) rotate(+45deg); /* Initial rotation to align the rocket tip */
-  transition: transform 0.2s ease-out;
+  transform-origin: 32px 0; /* Set the origin to the tip of the rocket */
+  z-index: 4;
 }

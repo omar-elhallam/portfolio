@@ -3,7 +3,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import './Home.css';
 import CustomCursor from './components/Custom_Cursor';
 import CosmicTitle from './components/CosmicTitle/CosmicTitle';
-import pfp from './assets/images/pfp/pfp.png'; // Adjust the path as necessary
+import Header from './components/Header/Header';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -36,23 +36,10 @@ function Home() {
   return (
     <div className="portfolio dark-theme">
       <CustomCursor /> {/* Add the custom cursor to the home page */}
+      <Header showHeader={showHeader} />
       <div className="background-layer" id="nebula"></div>
       <div className="background-layer" id="stars-midground"></div>
       <div className="background-layer" id="stars-foreground"></div>
-
-      {/* Header */}
-      <header className={`header ${showHeader ? 'visible' : 'hidden'}`}>
-        <div className="logo">Portfolio</div>
-        <nav className="nav">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="nav-link">LinkedIn</a>
-          <a href="https://github.com/omar-elhallam" target="_blank" rel="noopener noreferrer" className="nav-link">Github</a>
-          <a href="mailto:omar.elhallam8@gmail.com" className="nav-link">Email</a>
-        </nav>
-        <div className="profile">
-          <img src={pfp} alt="Omar pfp" className="profile-pic" />
-          <NavLink to="/TestBackground" className="header-name">Omar El Hallam</NavLink>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="hero">

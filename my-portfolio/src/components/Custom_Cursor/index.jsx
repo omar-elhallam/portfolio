@@ -55,7 +55,7 @@ function CustomCursor() {
       // Smoothly rotate towards target angle
       currentAngle += deltaAngle * 0.1; // 0.1 = rotation smoothing factor
 
-      cursor.style.transform = `translate3d(${currentX - 32}px, ${currentY - 32}px, 0) rotate(${currentAngle}deg)`;
+      cursor.style.transform = `translate3d(${currentX - 32}px, ${currentY}px, 0) rotate(${currentAngle}deg)`;
 
       requestAnimationFrame(animateCursor);
     };
