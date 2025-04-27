@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+.cosmic-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(220, 228, 228);
+  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  position: relative;
+  z-index: 5;
+  animation: glow-pulse 5s infinite alternate;
+  font-family: "Space Mono", monospace !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
+.cosmic-title span {
+  opacity: 0; /* Ensure the title is hidden initially */
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 30px #00d4ff, 0 0 40px #00d4ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

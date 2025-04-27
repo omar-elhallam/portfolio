@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import './Home.css';
 import CustomCursor from './components/Custom_Cursor';
+import CosmicTitle from './components/CosmicTitle/CosmicTitle';
+import pfp from './assets/images/pfp/pfp.png'; // Adjust the path as necessary
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -9,14 +11,14 @@ function Home() {
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+    const handleScroll = () => {  
+      if (window.scrollY > lastScrollY && window.scrollY > 70) {
         setShowHeader(true);
-      } else if (window.scrollY <= 100) {
+      } else if (window.scrollY <= 70) {
         setShowHeader(false);
       }
       lastScrollY = window.scrollY;
-
+    
       const scrollY = window.scrollY;
       const nebula = document.getElementById("nebula");
       const starsMidground = document.getElementById("stars-midground");
@@ -40,22 +42,22 @@ function Home() {
 
       {/* Header */}
       <header className={`header ${showHeader ? 'visible' : 'hidden'}`}>
-        <div className="logo">My Logo</div>
+        <div className="logo">Portfolio</div>
         <nav className="nav">
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="nav-link">LinkedIn</a>
+          <a href="https://github.com/omar-elhallam" target="_blank" rel="noopener noreferrer" className="nav-link">Github</a>
           <a href="mailto:omar.elhallam8@gmail.com" className="nav-link">Email</a>
         </nav>
-        <div className="name">
-          <NavLink to="/TestBackground" className="nav-link">Omar El Hallam</NavLink>
+        <div className="profile">
+          <img src={pfp} alt="Omar pfp" className="profile-pic" />
+          <NavLink to="/TestBackground" className="header-name">Omar El Hallam</NavLink>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="cosmic-title">
-            Crafting Immersive Experiences <br /> with Code & Design
-          </h1>
+          <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
           <NavLink to="/MyWork" className="cta-button nav-link">Explore My Work</NavLink>
         </div>
         <div className="hero-visuals">
