@@ -4,6 +4,7 @@ import './Home.css';
 import CustomCursor from './components/Custom_Cursor';
 import CosmicTitle from './components/CosmicTitle/CosmicTitle';
 import Header from './components/Header/Header';
+import WhoAmI from './components/WhoAmI';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -45,12 +46,17 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
-          <NavLink to="/MyWork" className="cta-button nav-link">Explore My Work</NavLink>
+          <WhoAmI /> {/* Added the WhoAmI component here */}
         </div>
         <div className="hero-visuals">
           {/* Glowing Cards */}
           <div className="card-layout">
-            <div className="card-layer glowing-card"></div>
+            <div className="card-layer glowing-card">
+              <div className="card-content">
+                <h3 className="card-title">Games Website</h3>
+                <p className="card-description">Created a website with React and JavaScript to host games developed using Godot.</p>
+              </div>
+            </div>
             <div className="card-layer glowing-card"></div>
             <div className="card-layer glowing-card"></div>
           </div>

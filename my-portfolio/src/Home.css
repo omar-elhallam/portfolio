@@ -1,7 +1,6 @@
 /* Global Styles */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
     background: #0d1117; /* Dark background */
     color: #ffffff; /* Light text */
     overflow-x: hidden;
@@ -59,7 +58,7 @@ body {
     z-index: 4; /* Higher than background layers */
     padding: 4rem 2rem;
     color: white; /* Ensure text is visible */
-    margin-top: 200px; /* Lower the placement of the first section */
+    margin-top: 175px; /* Lower the placement of the first section */
   }
   
   .hero-title {
@@ -130,6 +129,25 @@ body {
   .card-layer:hover {
     transform: scale(1.25);
     box-shadow: 0 8px 30px rgba(0, 212, 255, 0.8);
+  }
+
+  .card-content {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+  }
+
+  .card-description {
+    font-size: 0.7rem;
+    color: #c9d1d9;
+    line-height: 1.5;
   }
   
   /* Section Styles */

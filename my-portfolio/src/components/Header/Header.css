@@ -21,14 +21,20 @@
   }
   
   .header .logo {
-    font-size: 1.8rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #0a66c2;
   }
   
   .header .nav {
     display: flex;
     gap: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the nav links */
   }
   
   .header .nav-link {
@@ -62,11 +68,14 @@
   /* Adjust the name next to picture */
   .header-name {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #0a66c2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: right;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
   }
 
   .icon {

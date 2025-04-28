@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
+
 .cosmic-title {
+  position: center center !important;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -12,6 +14,7 @@
   font-family: "Space Mono", monospace !important;
   font-weight: 700 !important;
   font-style: normal !important;
+  margin-bottom: 25vh;
 }
 
 .cosmic-title span {

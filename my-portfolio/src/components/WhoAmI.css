@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap');
+
+.who-am-i-container {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 2rem 0;
+
+    font-family: "VT323", monospace !important;
+    font-weight: 400 !important;
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+    color: #ffffff;
+    transform: translateX(0%);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
+}
+
+/* Initially hidden (to the left) */
+.who-am-i-container.hidden {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+
+/* Slide into view */
+.who-am-i-container.visible {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+/* Slide out to the right */
+.who-am-i-container.exit {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+.who-am-i-button {
+	color: #00ffea;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea40;
+	animation: jump 3s infinite, glowPulse 2s infinite alternate;
+	transition: transform 0.3s ease;
+}
+
+.who-am-i-button:hover {
+    transform: scale(1.5);
+}
+
+/* Jump animation */
+@keyframes jump {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+.terminal {
+  background-color: #0d191d;
+  padding: 1rem;
+  padding-top : 1.7rem;
+  border-radius: 10px;
+  border: 2px solid #1AE2EF;
+  margin-top: 1rem;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px #1AE2EF;
+  overflow: hidden;
+  width: 50vw;
+  height: 40vh;
+  overflow-y: auto;
+
+  color: #1AE2EF;
+
+  text-shadow:
+    0 0 1px #1AE2EF,
+    0 0 2px #1AE2EF,
+    0 0 2px #1AE2EF;
+
+  background: 
+    linear-gradient(
+      to bottom, 
+      #15262d 0%,   /* Darker version of #1D333D */
+      #15262d 49%, 
+      #10242b 50%,  /* Darker version of #17313C */
+      #15262d 100%
+    );
+  background-size: 100% 4px; 
+
+}
+
+
+
+.terminal pre {
+	margin: 0;
+	white-space: pre-wrap;
+	word-break: break-word;
+	overflow-wrap: break-word;
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: #1AE2EF;
+  animation: blink 1s step-start infinite;
+}
+
+.blinking-cursor.hidden {
+    /*display: none;*/
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -43,8 +43,8 @@ function CustomCursor() {
       const dy = mouseY - currentY;
       const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90; // Your +45 offset is fine
 
-      currentX += dx * 0.1; // Smooth follow
-      currentY += dy * 0.1;
+      currentX += dx * 0.07; // Smooth follow
+      currentY += dy * 0.07;
 
       // --- Angle interpolation fix ---
       let deltaAngle = targetAngle - currentAngle;
@@ -53,7 +53,7 @@ function CustomCursor() {
       deltaAngle = ((deltaAngle + 180) % 360) - 180;
 
       // Smoothly rotate towards target angle
-      currentAngle += deltaAngle * 0.1; // 0.1 = rotation smoothing factor
+      currentAngle += deltaAngle * 0.2; // 0.2 = rotation smoothing factor
 
       cursor.style.transform = `translate3d(${currentX - 32}px, ${currentY}px, 0) rotate(${currentAngle}deg)`;
 
