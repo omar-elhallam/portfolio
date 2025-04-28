@@ -3,6 +3,7 @@ import './WhoAmI.css';
 
 function WhoAmI() {
   const [showTerminal, setShowTerminal] = useState(false);
+  const [showButton, setShowButton] = useState(true);
   const [terminalText, setTerminalText] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
@@ -28,9 +29,9 @@ function WhoAmI() {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			if (scrollY > 300 && scrollY < 1000) {
+			if (scrollY > 100 && scrollY < 1450) {
 				setState('visible');
-			} else if (scrollY >= 1000) {
+			} else if (scrollY >= 1450) {
 				setState('exit');
 			} else {
 				setState('hidden');
@@ -104,6 +105,7 @@ function WhoAmI() {
   }, [showTerminal, typingIndex, charIndex, clearingTerminal]);
 
   const handleButtonClick = () => {
+    setShowButton(false); // Hide button instantly
     setShowTerminal(false); // Hide terminal instantly
     setTimeout(() => {
       setShowTerminal(true); // Show terminal with fade-in effect
@@ -112,12 +114,14 @@ function WhoAmI() {
 
   return (
     <div className={`who-am-i-container ${state}`}>
-      <button
-        className="who-am-i-button"
-        onClick={handleButtonClick}
-      >
-        Who am I?
-      </button>
+      {showButton && (
+        <button
+          className="who-am-i-button"
+          onClick={handleButtonClick}
+        >
+          Who am I?
+        </button>
+      )}
 
       {showTerminal && (
         <div className={`terminal ${fadeIn ? 'fade-in' : ''}`}>

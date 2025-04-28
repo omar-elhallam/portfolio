@@ -8,7 +8,7 @@ const CosmicTitle = ({ text }) => {
 
   useEffect(() => {
     const firstLineTimer = setTimeout(() => setShowFirstLine(true), 500); // Fade in first line after 0.5s
-    const secondLineTimer = setTimeout(() => setShowSecondLine(true), 3500); // Fade in second line after 4s
+    const secondLineTimer = setTimeout(() => setShowSecondLine(true), 2500); // Fade in second line after 4s
 
     return () => {
       clearTimeout(firstLineTimer);
