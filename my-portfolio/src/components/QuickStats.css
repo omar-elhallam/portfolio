@@ -1,0 +1,98 @@
+.quick-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0 2rem 0;
+  z-index: 5;
+  position: relative;
+}
+
+.stat-card {
+  background: rgba(30, 30, 60, 0.85);
+  border: 1.5px solid #00ffe7;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 16px #00ffe7aa, 0 0 32px #1a1a2e44 inset;
+  padding: 1.5rem 2.2rem;
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+  transition: 
+    transform 0.4s cubic-bezier(.4,2,.6,1), 
+    box-shadow 0.4s cubic-bezier(.4,2,.6,1),
+    opacity 0.4s cubic-bezier(.4,2,.6,1),
+    width 0.4s cubic-bezier(.4,2,.6,1),
+    min-width 0.4s cubic-bezier(.4,2,.6,1),
+    max-width 0.4s cubic-bezier(.4,2,.6,1),
+    left 0.4s cubic-bezier(.4,2,.6,1),
+    top 0.4s cubic-bezier(.4,2,.6,1);
+  will-change: width, transform, box-shadow, opacity;
+  backdrop-filter: blur(2px);
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+  flex: 0 0 auto;
+}
+
+.stat-card .stat-details {
+  display: none;
+}
+
+.stat-card.active {
+  z-index: 2;
+  transform: scale(2) translateX(0);
+  box-shadow: 0 0 32px #00ffe7cc, 0 0 48px #1a1a2e66 inset;
+}
+
+.stat-card.left-of-active {
+  transform: translateX(-60px) scale(0.92);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.stat-card.right-of-active {
+  transform: translateX(60px) scale(0.92);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.stat-card:not(.active):not(.left-of-active):not(.right-of-active) {
+  opacity: 1;
+  transform: none;
+  z-index: 1;
+}
+
+.stat-card:hover {
+  box-shadow: 0 0 32px #00ffe7cc, 0 0 48px #1a1a2e66 inset;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #00ffe7;
+  filter: drop-shadow(0 0 6px #00ffe7aa);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  letter-spacing: 1px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+.stat-card ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+}
+
+.stat-card li {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  color: #aaffff;
+}

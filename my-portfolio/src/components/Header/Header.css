@@ -26,7 +26,7 @@
     font-style: normal;
     font-size: 2rem;
     font-weight: bold;
-    color: #0a66c2;
+    color: #1AE2EF;
   }
   
   .header .nav {
@@ -68,7 +68,7 @@
   /* Adjust the name next to picture */
   .header-name {
     font-size: 1.2rem;
-    color: #0a66c2;
+    color: #1AE2EF;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

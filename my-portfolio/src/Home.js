@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import WhoAmI from './components/WhoAmI';
 import GlowingCards from './components/GlowingCards';
 import ScrollBar from "./components/ScrollBar/ScrollBar";
+import QuickStats from './components/QuickStats';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -51,6 +52,8 @@ function Home() {
           <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
           <WhoAmI /> {/* Added the WhoAmI component here */}
         </div>
+        {/* Quick Stats Section */}
+        <QuickStats />
         <div className="hero-visuals">
           {/* Glowing Cards */}
           <GlowingCards />
