@@ -23,6 +23,7 @@ function CustomCursor() {
     };
 
     setRocketImage(getRandomRocket());
+    setRocketImage(rocket04);
   }, []);
 
   useEffect(() => {

@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
     z-index: 1000;
     transition: top 0.3s ease-in-out; /* Smooth transition */
     height: 60px; /* Set a smaller height for the header */

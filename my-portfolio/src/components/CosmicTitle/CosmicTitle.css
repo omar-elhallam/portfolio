@@ -2,15 +2,15 @@
 
 
 .cosmic-title {
+  user-select: none;
   position: center center !important;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
   color: rgb(220, 228, 228);
-  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  /*text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;*/
   position: relative;
-  z-index: 5;
-  animation: glow-pulse 5s infinite alternate;
+  /*animation: glow-pulse 5s infinite alternate;*/
   font-family: "Space Mono", monospace !important;
   font-weight: 700 !important;
   font-style: normal !important;
@@ -18,28 +18,70 @@
 }
 
 .cosmic-title span {
-  opacity: 0; /* Ensure the title is hidden initially */
+  display: inline-block; /* Ensure each letter behaves independently */
+}
+
+.cosmic-title .letter-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.cosmic-title .letter-glow,
+.cosmic-title .letter-plain {
+	opacity: 0;
+	transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1),
+	            transform 0.7s cubic-bezier(0.77,0,0.18,1),
+	            filter 0.7s cubic-bezier(0.77,0,0.18,1);
+	transform: translateY(60px) translateX(-30px) skewY(18deg) skewX(-12deg) scale(1.15) rotate(-18deg);
+	filter: blur(3px);
+}
+
+.cosmic-title .letter-wrapper.fade-in .letter-glow,
+.cosmic-title .letter-wrapper.fade-in .letter-plain {
+	opacity: 1;
+	transform: translateY(0) translateX(0) skewY(0deg) skewX(0deg) scale(1) rotate(0deg);
+	filter: blur(0);
+}
+
+.cosmic-title .letter-glow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	color: transparent;
+	text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.cosmic-title .letter-plain {
+	position: relative;
+	z-index: 5 !important;
+	color: white;
+}
+
+.cosmic-title .letter-wrapper:hover .letter-glow,
+.cosmic-title .letter-wrapper:hover .letter-plain {
+  animation: satellite-wobble 0.7s cubic-bezier(0.77,0,0.18,1) both;
 }
 
 @keyframes glow-pulse {
-  0% {
-    text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
-  }
-  100% {
-    text-shadow: 0 0 30px #00d4ff, 0 0 40px #00d4ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-  }
+	0% {
+		text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+	}
+	100% {
+		text-shadow: 0 0 30px #00d4ff, 0 0 40px #00d4ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+	}
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 4s forwards;
+@keyframes satellite-wobble {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  15% { transform: translateY(-2px) rotate(-8deg) scale(1.05); }
+  30% { transform: translateY(2px) rotate(8deg) scale(1.05); }
+  45% { transform: translateY(-2px) rotate(-6deg) scale(1.03); }
+  60% { transform: translateY(2px) rotate(6deg) scale(1.03); }
+  75% { transform: translateY(-1px) rotate(-3deg) scale(1.01); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.letter {
+	margin: 0 1px; /* small space to reduce glow clash */
 }

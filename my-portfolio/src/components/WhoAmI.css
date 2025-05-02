@@ -49,13 +49,13 @@
 
 .who-am-i-button {
 	color: #00ffea;
-	font-size: 1.8rem;
+	font-size: 2.5rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	cursor: pointer;
 	text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea40;
 	animation: jump 3s infinite, glowPulse 2s infinite alternate;
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease-out;
 }
 
 .who-am-i-button:hover {
@@ -68,7 +68,7 @@
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(-8px);
+		transform: translateY(-20px);
 	}
 }
 

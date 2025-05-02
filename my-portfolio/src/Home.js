@@ -5,6 +5,8 @@ import CustomCursor from './components/Custom_Cursor';
 import CosmicTitle from './components/CosmicTitle/CosmicTitle';
 import Header from './components/Header/Header';
 import WhoAmI from './components/WhoAmI';
+import GlowingCards from './components/GlowingCards';
+import ScrollBar from "./components/ScrollBar/ScrollBar";
 
 function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -36,6 +38,7 @@ function Home() {
 
   return (
     <div className="portfolio dark-theme">
+      <ScrollBar />
       <CustomCursor /> {/* Add the custom cursor to the home page */}
       <Header showHeader={showHeader} />
       <div className="background-layer" id="nebula"></div>
@@ -50,16 +53,7 @@ function Home() {
         </div>
         <div className="hero-visuals">
           {/* Glowing Cards */}
-          <div className="card-layout">
-            <div className="card-layer glowing-card">
-              <div className="card-content">
-                <h3 className="card-title">Games Website</h3>
-                <p className="card-description">Created a website with React and JavaScript to host games developed using Godot.</p>
-              </div>
-            </div>
-            <div className="card-layer glowing-card"></div>
-            <div className="card-layer glowing-card"></div>
-          </div>
+          <GlowingCards />
         </div>
       </section>
 
