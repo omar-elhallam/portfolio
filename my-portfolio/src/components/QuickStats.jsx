@@ -14,7 +14,7 @@ const stats = [
     )
   },
   {
-    icon: <FaRocket />, label: 'Years Coding', value: 4,
+    icon: <FaRocket />, label: 'Years of Coding', value: 4,
     details: (
       <ul>
         <li>Started in 2021</li>

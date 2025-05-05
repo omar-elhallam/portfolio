@@ -44,13 +44,13 @@
 }
 
 .stat-card.left-of-active {
-  transform: translateX(-60px) scale(0.92);
+  transform: translateX(-60px) scale(0.8);
   opacity: 0.7;
   z-index: 1;
 }
 
 .stat-card.right-of-active {
-  transform: translateX(60px) scale(0.92);
+  transform: translateX(60px) scale(0.8);
   opacity: 0.7;
   z-index: 1;
 }

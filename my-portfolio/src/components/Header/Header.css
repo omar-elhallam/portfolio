@@ -1,7 +1,7 @@
 /* Updated Modern Header Styles */
 .header {
     position: fixed;
-    top: -100px; /* Start hidden */
+    top: 0; /* Always visible at the top */
     left: 0;
     width: 100%;
     background: linear-gradient(90deg, #000000, #1a1a1a); /* Full black gradient background */
@@ -12,61 +12,56 @@
     padding: 1rem 2rem;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    transition: top 0.3s ease-in-out; /* Smooth transition */
     height: 60px; /* Set a smaller height for the header */
-  }
+}
 
-  .header.visible {
-    top: 0; /* Slide down when visible */
-  }
-  
-  .header .logo {
+.header .logo {
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: normal;
     font-size: 2rem;
     font-weight: bold;
     color: #1AE2EF;
-  }
-  
-  .header .nav {
+}
+
+.header .nav {
     display: flex;
     gap: 1.5rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%); /* Center the nav links */
-  }
-  
-  .header .nav-link {
+}
+
+.header .nav-link {
     font-size: 1rem;
     color: #ffffff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .header .nav-link:hover {
+}
+
+.header .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #00d4ff;
-  }
-  
-  /* Profile container for picture + name */
-  .profile {
+}
+
+/* Profile container for picture + name */
+.profile {
     display: flex;
     align-items: center;
     gap: 0.5rem; /* Space between picture and name */
-  }
+}
 
-  /* Profile picture */
-  .profile-pic {
+/* Profile picture */
+.profile-pic {
     width: 60px; /* You can adjust size */
     height: 60px;
     object-fit: cover; /* Make sure the picture is not distorted */
-  }
+}
 
-  /* Adjust the name next to picture */
-  .header-name {
+/* Adjust the name next to picture */
+.header-name {
     font-size: 1.2rem;
     color: #1AE2EF;
     white-space: nowrap;
@@ -76,12 +71,120 @@
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: normal;
-  }
+}
 
-  .icon {
+.icon {
     width: 24px; /* Set a fixed width for the icons */
     height: 24px; /* Set a fixed height for the icons */
     scale: 1.5; /* Scale the icon to make it larger */
     fill: currentColor; /* Ensure the icon inherits the text color */
     display: inline-block;
+}
+
+/* Minimal header: clean, transparent, no shadow */
+.minimal-header {
+    background: transparent;
+    box-shadow: none;
+    transition: background 0.3s, box-shadow 0.3s;
+    height: 60px;
+}
+
+/* Full header: dark background, shadow, visible on scroll */
+.full-header {
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s, box-shadow 0.3s;
+    height: 60px;
+}
+
+.nav.nav-buttons {
+    display: flex;
+    gap: 1.5rem;
+    position: static;
+    left: unset;
+    transform: unset;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #1AE2EF;
+    font-family: "Space Mono", monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-shadow: 0 0 0px #1AE2EF;
+}
+
+.nav-btn:hover, .nav-btn:focus {
+    background: rgba(26, 226, 239, 0.12);
+    color: #fff;
+    box-shadow: 0 0 8px #1AE2EF, 0 0 2px #fff;
+}
+
+.minimal-profile {
+    margin-left: auto;
+}
+
+.full-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+/* Hide full-header-content in minimal mode */
+.minimal-header .full-header-content {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header, .minimal-header, .full-header {
+        padding: 0.5rem 1rem;
+        height: 48px;
+    }
+    .header-name {
+        font-size: 1rem;
+    }
+    .nav-btn {
+        font-size: 1rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+
+/* Fade-in animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-fade-in {
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+.fade-in-el {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+.fade-in-stagger .fade-in-el {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+.fade-in-el[style*="animation-delay: 0.1s"] { animation-delay: 0.1s !important; }
+.fade-in-el[style*="animation-delay: 0.2s"] { animation-delay: 0.2s !important; }
+.fade-in-el[style*="animation-delay: 0.3s"] { animation-delay: 0.3s !important; }
+.fade-in-el[style*="animation-delay: 0.4s"] { animation-delay: 0.4s !important; }
+.fade-in-el[style*="animation-delay: 0.5s"] { animation-delay: 0.5s !important; }

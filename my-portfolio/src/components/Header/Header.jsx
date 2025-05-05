@@ -1,30 +1,57 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 import pfp from '../../assets/images/pfp/pfp.png';
-import linkedinIcon from './linkedin_icon.svg';
-import githubIcon from './github_icon.svg';
-import emailIcon from './email_icon.svg';
 
-function Header({ showHeader }) {
+function Header() {
+  const [atTop, setAtTop] = useState(true);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Run animation on mount
+    setAnimate(false);
+    const timeout = setTimeout(() => setAnimate(true), 20);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    // Animate when atTop changes
+    setAnimate(false);
+    const timeout = setTimeout(() => setAnimate(true), 20);
+    return () => clearTimeout(timeout);
+  }, [atTop]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setAtTop(window.scrollY < 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className={`header ${showHeader ? 'visible' : 'hidden'}`}>
-      <div className="logo">Portfolio</div>
-      <nav className="nav">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="nav-link">
-          <img src={linkedinIcon} alt="LinkedIn" className="icon" />
-        </a>
-        <a href="hhttps://github.com" target="_blank" rel="noopener noreferrer" className="nav-link">
-          <img src={githubIcon} alt="GitHub" className="icon" />
-        </a>
-        <a href="mailto:omar.elhallam8@gmail.com" className="nav-link">
-          <img src={emailIcon} alt="Email" className="icon" />
-        </a>
+    <header className={`header ${atTop ? 'minimal-header' : 'full-header'}${animate ? ' header-fade-in' : ''}`}>
+      <nav className={`nav nav-buttons${animate ? ' fade-in-stagger' : ''}`}>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.1s' }} onClick={() => scrollToSection('home')}>Home</button>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.2s' }} onClick={() => scrollToSection('whoami')}>About Me</button>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.3s' }} onClick={() => scrollToSection('projects')}>Projects</button>
       </nav>
-      <div className="profile">
-        <img src={pfp} alt="Omar pfp" className="profile-pic" />
-        <NavLink to="/TestBackground" className="header-name">Omar El Hallam</NavLink>
+      <div className="profile minimal-profile fade-in-el" style={{ animationDelay: '0.4s' }}>
+        <span className="header-name">Omar El Hallam</span>
       </div>
+      {!atTop && (
+        <div className={`full-header-content${animate ? ' fade-in-el' : ''}`} style={{ animationDelay: '0.5s' }}>
+          <div className="logo">Portfolio</div>
+        </div>
+      )}
     </header>
   );
 }
