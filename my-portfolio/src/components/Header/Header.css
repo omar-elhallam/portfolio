@@ -1,160 +1,433 @@
-/* Updated Modern Header Styles */
+
 .header {
-    position: fixed;
-    top: 0; /* Always visible at the top */
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #000000, #1a1a1a); /* Full black gradient background */
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    height: 60px; /* Set a smaller height for the header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
 }
 
-.header .logo {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #1AE2EF;
+.header.scrolled {
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  height: 65px;
 }
 
-.header .nav {
-    display: flex;
-    gap: 1.5rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Center the nav links */
+/* ============================================
+   LEFT - BRAND/NAME
+   ============================================ */
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: all 0.3s ease;
 }
 
-.header .nav-link {
-    font-size: 1rem;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.header .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #00d4ff;
-}
-
-/* Profile container for picture + name */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Space between picture and name */
-}
-
-/* Profile picture */
-.profile-pic {
-    width: 60px; /* You can adjust size */
-    height: 60px;
-    object-fit: cover; /* Make sure the picture is not distorted */
-}
-
-/* Adjust the name next to picture */
 .header-name {
-    font-size: 1.2rem;
-    color: #1AE2EF;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: right;
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Space Mono", monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
 }
 
-.icon {
-    width: 24px; /* Set a fixed width for the icons */
-    height: 24px; /* Set a fixed height for the icons */
-    scale: 1.5; /* Scale the icon to make it larger */
-    fill: currentColor; /* Ensure the icon inherits the text color */
-    display: inline-block;
+.header-tagline {
+  font-size: 0.75rem;
+  color: #00d4ff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: slideInFromLeft 0.5s ease forwards;
+  animation-delay: 0.2s;
 }
 
-/* Minimal header: clean, transparent, no shadow */
-.minimal-header {
-    background: transparent;
-    box-shadow: none;
-    transition: background 0.3s, box-shadow 0.3s;
-    height: 60px;
+.header.scrolled .header-name {
+  font-size: 1.2rem;
 }
 
-/* Full header: dark background, shadow, visible on scroll */
-.full-header {
-    background: linear-gradient(90deg, #000000, #1a1a1a);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-    transition: background 0.3s, box-shadow 0.3s;
-    height: 60px;
-}
+/* ============================================
+   CENTER - NAVIGATION
+   ============================================ */
 
 .nav.nav-buttons {
-    display: flex;
-    gap: 1.5rem;
-    position: static;
-    left: unset;
-    transform: unset;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .nav-btn {
-    background: none;
-    border: none;
-    color: #1AE2EF;
-    font-family: "Space Mono", monospace;
+  background: none;
+  border: none;
+  color: #c9d1d9;
+  font-family: "Space Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  left: 100%;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   RIGHT - SOCIAL LINKS
+   ============================================ */
+
+.header-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.social-link:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.social-link:hover {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: #00d4ff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  filter: brightness(0) invert(1);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header-fade-in {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fade-in-el {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fade-in-stagger .fade-in-el {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fade-in-el[style*="animation-delay: 0.1s"] { animation-delay: 0.1s !important; }
+.fade-in-el[style*="animation-delay: 0.2s"] { animation-delay: 0.2s !important; }
+.fade-in-el[style*="animation-delay: 0.3s"] { animation-delay: 0.3s !important; }
+.fade-in-el[style*="animation-delay: 0.4s"] { animation-delay: 0.4s !important; }
+.fade-in-el[style*="animation-delay: 0.5s"] { animation-delay: 0.5s !important; }
+.fade-in-el[style*="animation-delay: 0.6s"] { animation-delay: 0.6s !important; }
+.fade-in-el[style*="animation-delay: 0.7s"] { animation-delay: 0.7s !important; }
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 2rem;
+    height: 65px;
+  }
+
+  .header.scrolled {
+    height: 60px;
+  }
+
+  .header-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-btn {
+    font-size: 0.9rem;
+    padding: 0.55rem 1.1rem;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1.5rem;
+    height: 60px;
+  }
+
+  .header.scrolled {
+    height: 58px;
+  }
+
+  .header-name {
     font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    outline: none;
-    box-shadow: 0 0 0px #1AE2EF;
+  }
+
+  .header-tagline {
+    font-size: 0.7rem;
+  }
+
+  .nav.nav-buttons {
+    gap: 0.3rem;
+  }
+
+  .nav-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .header-social {
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-icon {
+    width: 17px;
+    height: 17px;
+  }
 }
 
-.nav-btn:hover, .nav-btn:focus {
-    background: rgba(26, 226, 239, 0.12);
-    color: #fff;
-    box-shadow: 0 0 8px #1AE2EF, 0 0 2px #fff;
-}
-
-.minimal-profile {
-    margin-left: auto;
-}
-
-.full-header-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 2rem;
-}
-
-/* Hide full-header-content in minimal mode */
-.minimal-header .full-header-content {
-    display: none;
-}
-
-/* Responsive adjustments */
+/* Small Mobile (600px and below) */
 @media (max-width: 600px) {
-    .header, .minimal-header, .full-header {
-        padding: 0.5rem 1rem;
-        height: 48px;
-    }
-    .header-name {
-        font-size: 1rem;
-    }
-    .nav-btn {
-        font-size: 1rem;
-        padding: 0.4rem 0.7rem;
-    }
+  .header {
+    padding: 0 1rem;
+    height: 58px;
+  }
+
+  .header.scrolled {
+    height: 56px;
+  }
+
+  .header-name {
+    font-size: 1rem;
+  }
+
+  .header-tagline {
+    font-size: 0.65rem;
+  }
+
+  .nav-btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .header-social {
+    gap: 0.6rem;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0 0.8rem;
+    height: 56px;
+    gap: 0.5rem;
+  }
+
+  .header.scrolled {
+    height: 54px;
+  }
+
+  .header-name {
+    font-size: 0.95rem;
+  }
+
+  .header-tagline {
+    display: none; /* Hide tagline on very small screens */
+  }
+
+  .nav.nav-buttons {
+    gap: 0.2rem;
+  }
+
+  .nav-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .header-social {
+    gap: 0.5rem;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .header {
+    padding: 0 0.6rem;
+    height: 52px;
+  }
+
+  .header-name {
+    font-size: 0.9rem;
+  }
+
+  .nav-btn {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .social-link {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    height: 52px;
+    padding: 0 1.5rem;
+  }
+
+  .header.scrolled {
+    height: 50px;
+  }
+
+  .header-tagline {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 0.4rem 0.9rem;
+  }
 }
 
 /* ============================================

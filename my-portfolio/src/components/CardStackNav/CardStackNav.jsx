@@ -1,78 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import './Home.css';
-import CustomCursor from './components/Custom_Cursor';
-import CosmicTitle from './components/CosmicTitle/CosmicTitle';
-import Header from './components/Header/Header';
-import WhoAmI from './components/WhoAmI';
-import GlowingCards from './components/GlowingCards';
-import ScrollBar from "./components/ScrollBar/ScrollBar";
-import CardStackNav from './components/CardStackNav/CardStackNav';
+import './CardStackNav.css';
 
-function Home() {
-  const [showHeader, setShowHeader] = useState(false);
+const CardStackNav = () => {
+  const [activeCard, setActiveCard] = useState(0);
+  const [direction, setDirection] = useState('next');
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const isMobile = window.innerWidth <= 768;
-
-    const handleScroll = () => {  
-      if (window.scrollY > lastScrollY && window.scrollY > 70) {
-        setShowHeader(true);
-      } else if (window.scrollY <= 70) {
-        setShowHeader(false);
-      }
-      lastScrollY = window.scrollY;
-    
-      // Disable parallax effect on mobile for better performance
-      if (!isMobile) {
-        const scrollY = window.scrollY;
-        const nebula = document.getElementById("nebula");
-        const starsMidground = document.getElementById("stars-midground");
-        const starsForeground = document.getElementById("stars-foreground");
-
-        if (nebula) nebula.style.backgroundPosition = `center calc(500px + ${scrollY * 0.1}px)`;
-        if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.25}px)`;
-        if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.4}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div className="portfolio dark-theme">
-      <div id="home"></div>
-      <ScrollBar />
-      <CustomCursor /> {/* Add the custom cursor to the home page */}
-      <Header showHeader={showHeader} />
-      <div className="background-layer" id="nebula"></div>
-      <div className="background-layer" id="stars-midground"></div>
-      <div className="background-layer" id="stars-foreground"></div>
-
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
-        </div>
-        <div id="whoami"><WhoAmI /></div>
-
-        <div className="hero-visuals" id="projects">
-          {/* Glowing Cards */}
-          <GlowingCards />
-        </div>
-      </section>
-
-      {/* Card Stack Navigation */}
-      <CardStackNav />
-
-      {/* Education Timeline */}
-      <section className="education-section" style={{ display: 'none' }}>
-        <h2 className="section-title">
-          <span className="title-icon">🎓</span>
-          Education & Academic Excellence
-        </h2>
-        <div className="education-timeline">
+  const cards = [
+    {
+      id: 0,
+      title: 'Education & Academic Excellence',
+      icon: '🎓',
+      theme: 'education',
+      content: (
+        <div className="card-content-wrapper">
           <div className="education-item">
             <div className="education-period">Nov 2024 - Jun 2025</div>
             <div className="education-content">
@@ -119,15 +59,15 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="skills-modern" style={{ display: 'none' }}>
-        <h2 className="section-title">
-          <span className="title-icon">💻</span>
-          Technical Expertise
-        </h2>
-        <div className="skills-grid">
+      ),
+    },
+    {
+      id: 1,
+      title: 'Technical Expertise',
+      icon: '💻',
+      theme: 'skills',
+      content: (
+        <div className="card-content-wrapper skills-content">
           <div className="skill-category">
             <h3>Programming Languages</h3>
             <div className="skill-tags">
@@ -169,15 +109,15 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Professional Experience */}
-      <section className="experience-section" style={{ display: 'none' }}>
-        <h2 className="section-title">
-          <span className="title-icon">💼</span>
-          Professional Experience
-        </h2>
-        <div className="experience-timeline">
+      ),
+    },
+    {
+      id: 2,
+      title: 'Professional Experience',
+      icon: '💼',
+      theme: 'experience',
+      content: (
+        <div className="card-content-wrapper">
           <div className="experience-item">
             <div className="experience-header">
               <div className="company-info">
@@ -226,11 +166,97 @@ function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      ),
+    },
+  ];
 
-      <div className="extra-content"></div> {/* Placeholder for scrolling */}
+  const handleNext = () => {
+    setDirection('next');
+    setActiveCard((prev) => (prev + 1) % cards.length);
+  };
+
+  const handlePrev = () => {
+    setDirection('prev');
+    setActiveCard((prev) => (prev - 1 + cards.length) % cards.length);
+  };
+
+  const handleTabClick = (index) => {
+    setDirection(index > activeCard ? 'next' : 'prev');
+    setActiveCard(index);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  return (
+    <div className="card-stack-container">
+      {/* Navigation Tabs */}
+      <div className="card-tabs">
+        {cards.map((card, index) => (
+          <button
+            key={card.id}
+            className={`card-tab ${activeCard === index ? 'active' : ''}`}
+            onClick={() => handleTabClick(index)}
+          >
+            <span className="tab-icon">{card.icon}</span>
+            <span className="tab-title">{card.title}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Card Stack */}
+      <div className="card-stack">
+        {cards.map((card, index) => (
+          <div
+            key={card.id}
+            className={`stack-card ${card.theme} ${
+              index === activeCard
+                ? 'active'
+                : index < activeCard
+                ? 'left'
+                : 'right'
+            } ${direction}`}
+          >
+            <div className="card-header-section">
+              <span className="card-icon">{card.icon}</span>
+              <h2 className="card-title">{card.title}</h2>
+            </div>
+            <div className="card-body">{card.content}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button className="nav-arrow nav-arrow-left" onClick={handlePrev} aria-label="Previous card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+      <button className="nav-arrow nav-arrow-right" onClick={handleNext} aria-label="Next card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      {/* Progress Indicator */}
+      <div className="progress-indicator">
+        {cards.map((card, index) => (
+          <div
+            key={card.id}
+            className={`progress-dot ${index === activeCard ? 'active' : ''}`}
+            onClick={() => handleTabClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Home;
+export default CardStackNav;

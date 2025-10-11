@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
-import pfp from '../../assets/images/pfp/pfp.png';
+import emailIcon from './email_icon.svg';
+import githubIcon from './github_icon.svg';
+import linkedinIcon from './linkedin_icon.svg';
 
 function Header() {
-  const [atTop, setAtTop] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -14,15 +16,15 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    // Animate when atTop changes
+    // Animate when scroll state changes
     setAnimate(false);
     const timeout = setTimeout(() => setAnimate(true), 20);
     return () => clearTimeout(timeout);
-  }, [atTop]);
+  }, [scrolled]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setAtTop(window.scrollY < 50);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -33,7 +35,7 @@ function Header() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      const headerOffset = 80; // Header height (60px) + extra padding
+      const headerOffset = 80;
       const elementPosition = section.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -45,20 +47,62 @@ function Header() {
   };
 
   return (
-    <header className={`header ${atTop ? 'minimal-header' : 'full-header'}${animate ? ' header-fade-in' : ''}`}>
-      <nav className={`nav nav-buttons${animate ? ' fade-in-stagger' : ''}`}>
-        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.1s' }} onClick={() => scrollToSection('home')}>Home</button>
-        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.2s' }} onClick={() => scrollToSection('whoami')}>About Me</button>
-        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.3s' }} onClick={() => scrollToSection('projects')}>Projects</button>
-      </nav>
-      <div className="profile minimal-profile fade-in-el" style={{ animationDelay: '0.4s' }}>
+    <header className={`header ${scrolled ? 'scrolled' : ''}${animate ? ' header-fade-in' : ''}`}>
+      {/* Left side - Name/Brand */}
+      <div className="header-brand fade-in-el" style={{ animationDelay: '0.1s' }}>
         <span className="header-name">Omar El Hallam</span>
+        {scrolled && (
+          <span className="header-tagline">Full-Stack Developer</span>
+        )}
       </div>
-      {!atTop && (
-        <div className={`full-header-content${animate ? ' fade-in-el' : ''}`} style={{ animationDelay: '0.5s' }}>
-          <div className="logo">Portfolio</div>
-        </div>
-      )}
+
+      {/* Center - Navigation */}
+      <nav className={`nav nav-buttons${animate ? ' fade-in-stagger' : ''}`}>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.2s' }} onClick={() => scrollToSection('home')}>
+          Home
+        </button>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.3s' }} onClick={() => scrollToSection('whoami')}>
+          About me
+        </button>
+        <button className="nav-btn fade-in-el" style={{ animationDelay: '0.4s' }} onClick={() => scrollToSection('projects')}>
+          Projects
+        </button>
+      </nav>
+
+      {/* Right side - Social Links */}
+      <div className={`header-social${animate ? ' fade-in-stagger' : ''}`}>
+        <a 
+          href="mailto:omar.elhallam8@gmail.com" 
+          className="social-link fade-in-el" 
+          style={{ animationDelay: '0.5s' }}
+          aria-label="Email"
+          title="Email me"
+        >
+          <img src={emailIcon} alt="Email" className="social-icon" />
+        </a>
+        <a 
+          href="https://github.com/omar-elhallam" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="social-link fade-in-el" 
+          style={{ animationDelay: '0.6s' }}
+          aria-label="GitHub"
+          title="GitHub Profile"
+        >
+          <img src={githubIcon} alt="GitHub" className="social-icon" />
+        </a>
+        <a 
+          href="https://www.linkedin.com/in/omar-abdelmoti-el-hallam-73850a347/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="social-link fade-in-el" 
+          style={{ animationDelay: '0.7s' }}
+          aria-label="LinkedIn"
+          title="LinkedIn Profile"
+        >
+          <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
+        </a>
+      </div>
     </header>
   );
 }
