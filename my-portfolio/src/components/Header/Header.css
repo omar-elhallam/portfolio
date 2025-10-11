@@ -157,6 +157,216 @@
     }
 }
 
+/* ============================================
+   ENHANCED RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 1.5rem;
+    height: 58px;
+  }
+
+  .header .logo {
+    font-size: 1.8rem;
+  }
+
+  .header .nav {
+    gap: 1.2rem;
+  }
+
+  .header .nav-link {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .profile-pic {
+    width: 55px;
+    height: 55px;
+  }
+
+  .header-name {
+    font-size: 1.15rem;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+    scale: 1.4;
+  }
+
+  .nav-btn {
+    font-size: 1.05rem;
+    padding: 0.45rem 1.1rem;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1rem;
+    height: 52px;
+    flex-wrap: nowrap;
+  }
+
+  .header .logo {
+    font-size: 1.5rem;
+  }
+
+  .header .nav {
+    gap: 0.8rem;
+    position: static;
+    transform: none;
+  }
+
+  .header .nav-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .profile {
+    gap: 0.4rem;
+  }
+
+  .profile-pic {
+    width: 45px;
+    height: 45px;
+  }
+
+  .header-name {
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    scale: 1.3;
+  }
+
+  .nav-btn {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .full-header-content {
+    gap: 0.8rem;
+    margin-left: 1rem;
+  }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .header, .minimal-header, .full-header {
+    padding: 0.6rem 0.8rem;
+    height: 48px;
+  }
+
+  .header .logo {
+    font-size: 1.3rem;
+  }
+
+  .header .nav {
+    gap: 0.5rem;
+  }
+
+  .header .nav-link {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .profile {
+    gap: 0.3rem;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-name {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    scale: 1.2;
+  }
+
+  .nav-btn {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .full-header-content {
+    gap: 0.6rem;
+    margin-left: 0.5rem;
+  }
+
+  .nav.nav-buttons {
+    gap: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+  .header, .minimal-header, .full-header {
+    padding: 0.5rem 0.6rem;
+    height: 44px;
+  }
+
+  .header .logo {
+    font-size: 1.1rem;
+  }
+
+  .header .nav-link {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  .profile-pic {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-name {
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    scale: 1.1;
+  }
+
+  .nav-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header, .minimal-header, .full-header {
+    height: 44px;
+    padding: 0.5rem 1rem;
+  }
+
+  .header .logo {
+    font-size: 1.2rem;
+  }
+
+  .profile-pic {
+    width: 38px;
+    height: 38px;
+  }
+
+  .header-name {
+    font-size: 0.85rem;
+  }
+}
+
 /* Fade-in animations */
 @keyframes fadeInUp {
   0% {

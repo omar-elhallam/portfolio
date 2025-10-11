@@ -22,8 +22,9 @@ function WhoAmI() {
   ];
 
   const aboutMeDescription = [
-    "> I am Omar El Hallam, a Computer Science student, who studied at University of Richmond and College de paris, with a passion for software development, music, and sports. I specialize in creating dynamic and immersive digital experiences. blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.",
-    "> Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.",
+    "> I’m Omar El Hallam, a passionate software developer with a strong background in computer science and hands-on experience across web, systems, and game development. I enjoy turning ideas into functional, elegant solutions — whether through C++ backends, React interfaces, or Python automation.",
+    "> I’ve worked on a variety of projects, from building an assembler and CPU on Logisim to developing interactive web platforms and SharePoint solutions during my internships at Allianz Maroc and Exakis Nelite.",
+    "> Curious, detail-oriented, and creative, I aim to craft technology that’s both efficient and meaningful — blending technical precision with a design-driven mindset."
   ];
 
 	useEffect(() => {
@@ -52,7 +53,7 @@ function WhoAmI() {
             const typingDelay = setTimeout(() => {
               setCurrentLine((prev) => prev + aboutMeTransmission[typingIndex][charIndex]);
               setCharIndex((prev) => prev + 1);
-            }, 20); // Adjust speed here
+            }, 7); // Adjust speed here
 
             return () => clearTimeout(typingDelay);
           } else {
@@ -125,7 +126,9 @@ function WhoAmI() {
 
       {showTerminal && (
         <div className={`terminal ${fadeIn ? 'fade-in' : ''}`}>
-          <pre>{terminalText + currentLine}<span className={`blinking-cursor ${isTyping ? '' : 'hidden'}`}>|</span></pre>
+          <div className="terminal-content">
+            <pre>{terminalText + currentLine}<span className={`blinking-cursor ${isTyping ? '' : 'hidden'}`}>|</span></pre>
+          </div>
         </div>
       )}
     </div>

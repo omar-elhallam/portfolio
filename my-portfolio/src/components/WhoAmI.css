@@ -2,7 +2,7 @@
 
 .who-am-i-container {
     width: 100vw;
-    height: 70vh;
+    height: 70vh; /* Increased from 70vh */
     display: flex;
     justify-content: center;  
     align-items: center;
@@ -11,7 +11,7 @@
     text-align: center;
     margin: 2rem 0;
 
-    margin-bottom: 20vh;
+    margin-bottom: 20vh; /* Reduced bottom margin for more space */
 
     font-family: "VT323", monospace !important;
     font-weight: 400 !important;
@@ -84,8 +84,8 @@
   margin-right: auto;
   box-shadow: 0 0 15px #1AE2EF;
   overflow: hidden;
-  width: 50vw;
-  height: 40vh;
+  width: 55vw;   /* Increased from 50vw */
+  height: 45vh;  /* Increased from 40vh */
   overflow-y: auto;
 
   color: #1AE2EF;
@@ -118,7 +118,7 @@
   font-weight: 400;
   font-style: normal;
   letter-spacing: 1px;
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller than 2rem */
 }
 
 .blinking-cursor {
@@ -135,5 +135,119 @@
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+
+.terminal-content {
+  text-align: justify;
+  /* Optional: for better word spacing in justified monospace text */
+  text-justify: inter-word;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  .who-am-i-container {
+    height: 65vh;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    margin-bottom: 15vh;
+  }
+
+  .who-am-i-button {
+    font-size: 2rem;
+  }
+
+  .terminal {
+    width: 65vw;
+    height: 50vh;
+    padding: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .terminal pre {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .who-am-i-container {
+    height: auto;
+    min-height: 50vh;
+    padding: 1rem;
+    margin: 1rem 0;
+    margin-bottom: 10vh;
+  }
+
+  .who-am-i-button {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .terminal {
+    width: 85vw;
+    height: auto;
+    min-height: 40vh;
+    max-height: 60vh;
+    padding: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  .terminal pre {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+
+  .blinking-cursor {
+    width: 8px;
+  }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .who-am-i-container {
+    height: auto;
+    min-height: 40vh;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    margin-bottom: 8vh;
+    border-radius: 8px;
+  }
+
+  .who-am-i-button {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .terminal {
+    width: 90vw;
+    height: auto;
+    min-height: 35vh;
+    max-height: 55vh;
+    padding: 0.8rem;
+    padding-top: 1.2rem;
+    border-radius: 8px;
+  }
+
+  .terminal pre {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+
+  .blinking-cursor {
+    width: 6px;
+  }
+
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
   }
 }

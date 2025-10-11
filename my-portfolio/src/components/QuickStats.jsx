@@ -4,7 +4,7 @@ import './QuickStats.css';
 
 const stats = [
   {
-    icon: <FaCode />, label: 'Projects', value: 6,
+    icon: <FaCode />, label: 'Projects', value: 4,
     details: (
       <ul>
         <li>Personal & Academic Projects</li>
@@ -23,7 +23,7 @@ const stats = [
     )
   },
   {
-    icon: <FaAward />, label: 'Certifications', value: 3,
+    icon: <FaAward />, label: 'Certifications', value: 1,
     details: (
       <ul>
         <li>Hackathon Winner</li>

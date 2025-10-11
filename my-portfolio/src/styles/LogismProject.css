@@ -1,0 +1,242 @@
+/* ============================================
+   LOGISM PROJECT - SPECIFIC STYLES
+   ============================================ */
+
+/* Enhanced code examples for assembly */
+.code-example {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 212, 255, 0.05));
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #00d4ff;
+  margin: 1.5rem 0;
+  white-space: pre-wrap;
+  border-left: 4px solid #00d4ff;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.code-example::before {
+  content: '// MIPS Assembly';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 212, 255, 0.2);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom-left-radius: 8px;
+}
+
+/* Feature list styling */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature-list li {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.08), transparent);
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00d4ff;
+  color: #c9d1d9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0.5rem;
+  color: #00d4ff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), transparent);
+  padding-left: 2rem;
+}
+
+.feature-list li:hover::before {
+  opacity: 1;
+}
+
+/* Technical grid enhancements */
+.technical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.technical-item h3 {
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technical-item p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Metrics styling */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.metric-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 255, 0.05));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-glow);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.metric-item h3 {
+  color: #00d4ff;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.metric-item p {
+  font-size: 1.3rem;
+  color: #c9d1d9;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Learning items */
+.learning-item {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 4px solid #00d4ff;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.learning-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.15);
+}
+
+.learning-item h3 {
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.learning-item p {
+  text-align: justify;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Architecture-specific enhancements */
+.tech-subsection {
+  color: var(--primary-glow);
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Bonus features styling */
+.bonus-feature {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.05), rgba(0, 212, 255, 0.05));
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.bonus-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+  border-color: var(--secondary-glow);
+}
+
+.bonus-feature .feature-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.5));
+}
+
+.bonus-feature h3 {
+  color: var(--secondary-glow);
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.bonus-feature p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Timeline styling specific to project phases */
+.journey-timeline .timeline-marker {
+  background: linear-gradient(135deg, #00d4ff, #0080ff);
+}
+
+/* Stats specific styling */
+.stat-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 0, 255, 0.03));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .technical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-example {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .feature-list li {
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .bonus-feature {
+    padding: 1.5rem;
+  }
+}

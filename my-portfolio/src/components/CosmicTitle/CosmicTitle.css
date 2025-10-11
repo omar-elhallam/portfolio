@@ -85,3 +85,53 @@
 .letter {
 	margin: 0 1px; /* small space to reduce glow clash */
 }
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  .cosmic-title {
+    font-size: 2.5rem;
+    margin-bottom: 40vh;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .cosmic-title {
+    font-size: 2rem;
+    margin-bottom: 30vh;
+    padding: 0 1rem;
+  }
+
+  .cosmic-title .letter-glow {
+    text-shadow: 0 0 8px #00d4ff, 0 0 15px #00d4ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff;
+  }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .cosmic-title {
+    font-size: 1.5rem;
+    margin-bottom: 25vh;
+    padding: 0 0.5rem;
+  }
+
+  .cosmic-title .letter-glow {
+    text-shadow: 0 0 6px #00d4ff, 0 0 12px #00d4ff, 0 0 20px #ff00ff, 0 0 28px #ff00ff;
+  }
+
+  .letter {
+    margin: 0 0.5px;
+  }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+  .cosmic-title {
+    font-size: 1.3rem;
+    margin-bottom: 20vh;
+  }
+}
