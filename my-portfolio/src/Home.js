@@ -14,6 +14,7 @@ function Home() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
 
     const handleScroll = () => {  
       if (window.scrollY > lastScrollY && window.scrollY > 70) {
@@ -23,14 +24,17 @@ function Home() {
       }
       lastScrollY = window.scrollY;
     
-      const scrollY = window.scrollY;
-      const nebula = document.getElementById("nebula");
-      const starsMidground = document.getElementById("stars-midground");
-      const starsForeground = document.getElementById("stars-foreground");
+      // Disable parallax effect on mobile for better performance
+      if (!isMobile) {
+        const scrollY = window.scrollY;
+        const nebula = document.getElementById("nebula");
+        const starsMidground = document.getElementById("stars-midground");
+        const starsForeground = document.getElementById("stars-foreground");
 
-      if (nebula) nebula.style.backgroundPosition = `center calc(500px + ${scrollY * 0.1}px)`;
-      if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.25}px)`;
-      if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.4}px)`;
+        if (nebula) nebula.style.backgroundPosition = `center calc(500px + ${scrollY * 0.1}px)`;
+        if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.25}px)`;
+        if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.4}px)`;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);

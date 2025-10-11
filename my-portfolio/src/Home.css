@@ -322,9 +322,28 @@ body {
       font-size: 18px;
     }
 
+    /* Mobile-optimized background: disable parallax, use absolute positioning */
     .background-layer {
-      background-size: 60%;
-      height: 40%;
+      position: absolute;
+      transform: none; /* Remove transforms for better mobile performance */
+      background-size: cover; /* Cover the screen for mobile */
+      height: 100%; /* Full height */
+      background-position: center center; /* Center the background */
+    }
+
+    #nebula {
+      background-position: center center;
+      opacity: 0.7; /* Slightly reduce opacity for better readability */
+    }
+
+    #stars-midground {
+      background-position: center center;
+      opacity: 0.8;
+    }
+
+    #stars-foreground {
+      background-position: center center;
+      opacity: 0.9;
     }
 
     .cta-button {
@@ -390,9 +409,14 @@ body {
       border-radius: 8px;
     }
 
+    /* Further optimize for very small screens */
     .background-layer {
-      background-size: 80%;
-      height: 35%;
+      background-size: cover;
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+
+    #nebula {
+      opacity: 0.6; /* Further reduce opacity for readability */
     }
 
     .cta-button {
