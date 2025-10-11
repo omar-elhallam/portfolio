@@ -57,9 +57,8 @@ function Home() {
           <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
         </div>
         <div id="whoami"><WhoAmI /></div>
-        {/* Quick Stats Section */}
-        <QuickStats />
-        <div className="hero-visuals">
+
+        <div className="hero-visuals" id="projects">
           {/* Glowing Cards */}
           <GlowingCards />
         </div>

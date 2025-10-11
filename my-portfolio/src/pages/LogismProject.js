@@ -9,9 +9,18 @@ import '../styles/LogismProject.css';
 
 function LogismProject() {
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -40,8 +49,27 @@ function LogismProject() {
     setLightboxImage(null);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="project-page">
+      {/* Back Button */}
+      <button className="back-button" onClick={() => window.history.back()}>
+        ← Back
+      </button>
+
+      {/* Scroll to Top Button */}
+      <button 
+        className={`scroll-top-button ${!showScrollTop ? 'hidden' : ''}`}
+        onClick={scrollToTop}
+      >
+        ↑
+      </button>
       {/* Lightbox Modal */}
       {lightboxImage && (
         <div 
