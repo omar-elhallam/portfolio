@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import bonkusImage from '../assets/images/projects/Bonkus_3_50.png';
+import bonkusImage2 from '../assets/images/projects/marathondev/bonkus_games.gif';
+import bonkusVideo from '../assets/images/projects/marathondev/bonkus_navigation.mp4';
 import '../styles/ProjectPage.css';
 
 function MarathonDev() {
@@ -37,7 +39,8 @@ function MarathonDev() {
   }, [lightboxImage]);
 
   const openLightbox = (imageSrc, imageAlt) => {
-    setLightboxImage({ src: imageSrc, alt: imageAlt });
+    const isVideo = imageSrc.endsWith('.mp4') || imageSrc.endsWith('.webm') || imageSrc.endsWith('.ogg');
+    setLightboxImage({ src: imageSrc, alt: imageAlt, isVideo });
   };
 
   const closeLightbox = () => {
@@ -85,19 +88,49 @@ function MarathonDev() {
             padding: '2rem'
           }}
         >
-          <img 
-            src={lightboxImage.src} 
-            alt={lightboxImage.alt}
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: '90vw',
-              maxHeight: '90vh',
-              objectFit: 'contain',
-              cursor: 'default',
-              borderRadius: '8px',
-              boxShadow: '0 0 50px rgba(0, 0, 0, 0.5)'
-            }}
-          />
+          {lightboxImage.isVideo ? (
+            <video
+              src={lightboxImage.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                width: 'auto',
+                height: 'auto',
+                maxWidth: '95vw',
+                maxHeight: '95vh',
+                minWidth: '60vw',
+                objectFit: 'contain',
+                cursor: 'default',
+                borderRadius: '8px',
+                boxShadow: '0 0 50px rgba(0, 0, 0, 0.5)',
+                transform: 'scale(1)',
+                transition: 'transform 0.3s ease'
+              }}
+            />
+          ) : (
+            <img 
+              src={lightboxImage.src} 
+              alt={lightboxImage.alt}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                width: 'auto',
+                height: 'auto',
+                maxWidth: '95vw',
+                maxHeight: '95vh',
+                minWidth: '60vw',
+                objectFit: 'contain',
+                cursor: 'default',
+                borderRadius: '8px',
+                boxShadow: '0 0 50px rgba(0, 0, 0, 0.5)',
+                transform: 'scale(1)',
+                transition: 'transform 0.3s ease'
+              }}
+            />
+          )}
         </div>
       )}
 
@@ -319,11 +352,18 @@ function MarathonDev() {
           </div>
 
           <div className="image-column">
-            <div className="image-container cosmic-card image-placeholder">
-              <div className="placeholder-content">
-                <span className="placeholder-icon">🖼️</span>
-                <p>Game Selection Screen</p>
-              </div>
+            <div className="image-container cosmic-card">
+              <video 
+                src={bonkusVideo} 
+                alt="Game Selection Screen" 
+                className="project-main-image"
+                autoPlay
+                loop
+                muted
+                playsInline
+                onClick={() => openLightbox(bonkusVideo, "Game Selection Screen")}
+                style={{ cursor: 'zoom-in' }}
+              />
               <div className="image-caption">Card-based navigation for multiple games</div>
             </div>
 

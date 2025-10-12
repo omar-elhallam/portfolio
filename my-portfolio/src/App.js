@@ -4,6 +4,7 @@ import Home from './Home';
 import MyWork from './MyWork';
 import MarathonDev from './pages/MarathonDev'; // Import the new component
 import LogismProject from './pages/LogismProject'; // Import the new component
+import ServicePlatform from './pages/ServicePlatform'; // Import the new component
 
 const App = () => {
    return (
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="/portfolio" element={<Home />} />
             <Route path="MarathonDev" element={<MarathonDev />} />
             <Route path="LogismProject" element={<LogismProject />} />
+            <Route path="ServicePlatform" element={<ServicePlatform />} />
          </Routes>
       </>
    );

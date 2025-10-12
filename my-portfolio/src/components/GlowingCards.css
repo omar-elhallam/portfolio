@@ -24,6 +24,7 @@
     transform: translateY(30px) rotate(5deg);
     transition: opacity 0.6s ease, box-shadow 0.3s ease, transform 0.6s ease;
     perspective: 1000px;
+    cursor: pointer; /* Add pointer cursor to indicate clickability */
   }  
   
   .card-layer:hover {

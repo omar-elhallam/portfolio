@@ -1,0 +1,525 @@
+/* ============================================
+   SERVICE PLATFORM PROJECT - SPECIFIC STYLES
+   ============================================ */
+
+/* Status badge for ongoing project */
+.status-badge {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.status-badge.ongoing {
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 215, 0, 0.2));
+  border: 2px solid rgba(255, 165, 0, 0.5);
+  color: #ffa500;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+  }
+}
+
+/* Enhanced code examples */
+.code-example {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 212, 255, 0.05));
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #00d4ff;
+  margin: 1.5rem 0;
+  white-space: pre-wrap;
+  border-left: 4px solid #00d4ff;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  line-height: 1.8;
+}
+
+.code-example::before {
+  content: '// NestJS + TypeScript';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 212, 255, 0.2);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom-left-radius: 8px;
+}
+
+/* Feature list styling */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature-list li {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.08), transparent);
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00d4ff;
+  color: #c9d1d9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0.5rem;
+  color: #00d4ff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), transparent);
+  padding-left: 2rem;
+}
+
+.feature-list li:hover::before {
+  opacity: 1;
+}
+
+/* Tech specs styling */
+.tech-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.tech-specs span {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), transparent);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #00d4ff;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.tech-specs span:hover {
+  transform: translateX(5px);
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), transparent);
+}
+
+.tech-specs strong {
+  color: #00d4ff;
+  margin-right: 0.5rem;
+}
+
+/* Stack comparison grid */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stack-category {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 255, 0.05));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.stack-category:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-glow);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.stack-category h3 {
+  color: #00d4ff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stack-category p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.stack-category p strong {
+  color: #00d4ff;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Technical grid enhancements */
+.technical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.technical-item h3 {
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technical-item p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Challenge items styling */
+.challenge-item {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 4px solid #00d4ff;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.challenge-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.15);
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.challenge-item h3 {
+  color: #00d4ff;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.difficulty-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.difficulty-badge.high {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  color: #ff4444;
+}
+
+.difficulty-badge.medium {
+  background: rgba(255, 165, 0, 0.2);
+  border: 1px solid rgba(255, 165, 0, 0.5);
+  color: #ffa500;
+}
+
+.difficulty-badge.low {
+  background: rgba(0, 255, 0, 0.2);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  color: #00ff00;
+}
+
+.challenge-item p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.challenge-item p strong {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+/* Architecture-specific enhancements */
+.tech-subsection {
+  color: var(--primary-glow);
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Feature cards for MVP features */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 0, 255, 0.03));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-glow);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+}
+
+.feature-card h3 {
+  color: #00d4ff;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Code showcase specific styling */
+.code-showcase {
+  margin: 2rem 0;
+}
+
+.code-showcase h3 {
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.code-comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+.code-keyword {
+  color: #569cd6;
+  font-weight: 600;
+}
+
+.code-string {
+  color: #ce9178;
+}
+
+.code-number {
+  color: #b5cea8;
+}
+
+/* Outcomes grid */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.outcome-item {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.outcome-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+  border-color: var(--primary-glow);
+}
+
+.outcome-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.outcome-item h3 {
+  color: #00d4ff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.outcome-item p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Stats specific styling */
+.stat-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 0, 255, 0.03));
+}
+
+/* Timeline styling specific to project phases */
+.journey-timeline .timeline-marker {
+  background: linear-gradient(135deg, #00d4ff, #0080ff);
+}
+
+/* Glow card enhancements */
+.glow-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 255, 0.05));
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.glow-card h3 {
+  color: #00d4ff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.glow-card p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.glow-card p:last-child {
+  margin-bottom: 0;
+}
+
+.glow-card strong {
+  color: #00d4ff;
+}
+
+/* Future features styling */
+.future-feature {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.future-feature .technical-item {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.future-feature .technical-item:hover {
+  border-color: var(--primary-glow);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tech-stack-grid,
+  .technical-grid,
+  .feature-grid,
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-example {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .feature-list li {
+    padding: 0.8rem 1rem;
+  }
+
+  .challenge-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-badge {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .stack-category,
+  .outcome-item,
+  .challenge-item {
+    padding: 1.5rem;
+  }
+
+  .tech-subsection {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1.25rem;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+
+  .outcome-icon {
+    font-size: 2rem;
+  }
+
+  .glow-card,
+  .stack-category,
+  .outcome-item {
+    padding: 1.25rem;
+  }
+}

@@ -74,23 +74,35 @@ function GlowingCards() {
           </div>
         </div>
       </div>
-      <div className="card-layer glowing-card from-top" onClick={() => handleCardClick('/tacos-api')}>
+      <div className="card-layer glowing-card from-top" onClick={() => handleCardClick('/ServicePlatform')}>
         <div className="card-inner">
           <div className="card-front">
             <div className="card-content">
-              <h3 className="card-title">Tacos Online Service API</h3>
+              <h3 className="card-title">Service Platform MVP</h3>
               <p className="card-description">
-                RESTful API backend for a food ordering platform. Features modular architecture, SQL integration, and comprehensive testing.
+                Full-stack multiplatform service marketplace connecting customers with providers. Solo internship project featuring complete architecture.
               </p>
-              <div className="tech-stack">C++ • Crow Framework • SQL</div>
+              <div className="tech-stack">Flutter • NestJS • PostgreSQL • Supabase</div>
             </div>
           </div>
           <div className="card-back">
             <div className="card-content">
-              <h4 className="card-title">Tacos API Preview</h4>
-              <img src="/path-to-project-image.jpg" alt="Tacos Online Service API Preview" className="project-image" />
+              <h4 className="card-title">Service Platform Preview</h4>
+              <div style={{
+                width: '100%',
+                height: '200px',
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 0, 255, 0.2))',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '3rem',
+                marginBottom: '1rem'
+              }}>
+                🚧
+              </div>
               <p className="extended-description">
-                Designed for high performance and scalability, with a focus on modularity and testability.
+                Built from scratch: database design, REST APIs, authentication, bookings, payments, and Flutter mobile app (in development).
               </p>
             </div>
           </div>

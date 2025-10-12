@@ -70,7 +70,7 @@ function Home() {
       <section className="education-section" style={{ display: 'none' }}>
         <h2 className="section-title">
           <span className="title-icon">🎓</span>
-          Education & Academic Excellence
+          Education & Academic
         </h2>
         <div className="education-timeline">
           <div className="education-item">
@@ -199,7 +199,7 @@ function Home() {
               <div className="company-info">
                 <h3>Allianz Morocco</h3>
                 <p className="position">Data & Business Intelligence Intern</p>
-              </div>
+              </div> 
               <div className="experience-period">Jun 2023 - Aug 2023</div>
             </div>
             <div className="experience-location">Casablanca, Morocco</div>

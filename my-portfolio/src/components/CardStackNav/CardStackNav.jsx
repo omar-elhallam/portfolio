@@ -8,7 +8,7 @@ const CardStackNav = () => {
   const cards = [
     {
       id: 0,
-      title: 'Education & Academic Excellence',
+      title: 'Education & Academics',
       icon: '🎓',
       theme: 'education',
       content: (

@@ -9,18 +9,11 @@ function Header() {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    // Run animation on mount
+    // Run animation on mount only
     setAnimate(false);
     const timeout = setTimeout(() => setAnimate(true), 20);
     return () => clearTimeout(timeout);
   }, []);
-
-  useEffect(() => {
-    // Animate when scroll state changes
-    setAnimate(false);
-    const timeout = setTimeout(() => setAnimate(true), 20);
-    return () => clearTimeout(timeout);
-  }, [scrolled]);
 
   useEffect(() => {
     const handleScroll = () => {
