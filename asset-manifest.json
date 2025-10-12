@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.875fea7d.css",
-    "main.js": "/portfolio/static/js/main.bc3a9e8e.js",
+    "main.css": "/portfolio/static/css/main.8839ac47.css",
+    "main.js": "/portfolio/static/js/main.1eefbe19.js",
     "static/js/453.acca0757.chunk.js": "/portfolio/static/js/453.acca0757.chunk.js",
     "static/media/Nebula Blue.png": "/portfolio/static/media/Nebula Blue.79be7b430477cef6eded.png",
+    "static/media/bonkus_navigation.mp4": "/portfolio/static/media/bonkus_navigation.3ff8ac1e24c8baeb87d7.mp4",
     "static/media/Stars Small_1.png": "/portfolio/static/media/Stars Small_1.fa296a4c79c01538b22f.png",
+    "static/media/bonkus_games.gif": "/portfolio/static/media/bonkus_games.13aeae585125721ff0a3.gif",
     "static/media/Stars-Big_1_1_PC.png": "/portfolio/static/media/Stars-Big_1_1_PC.2e0c65f3292ef304d25a.png",
     "static/media/control.png": "/portfolio/static/media/control.e81d4c641058bdcba4e6.png",
     "static/media/regfile.png": "/portfolio/static/media/regfile.c82cc050c5cf8471a12f.png",
@@ -16,12 +18,12 @@
     "index.html": "/portfolio/index.html",
     "static/media/linkedin_icon.svg": "/portfolio/static/media/linkedin_icon.27859f9678a39c99c65dec87b4d37ee3.svg",
     "static/media/email_icon.svg": "/portfolio/static/media/email_icon.e820cda3d8a4c23eff6baa60d6a1863b.svg",
-    "main.875fea7d.css.map": "/portfolio/static/css/main.875fea7d.css.map",
-    "main.bc3a9e8e.js.map": "/portfolio/static/js/main.bc3a9e8e.js.map",
+    "main.8839ac47.css.map": "/portfolio/static/css/main.8839ac47.css.map",
+    "main.1eefbe19.js.map": "/portfolio/static/js/main.1eefbe19.js.map",
     "453.acca0757.chunk.js.map": "/portfolio/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.875fea7d.css",
-    "static/js/main.bc3a9e8e.js"
+    "static/css/main.8839ac47.css",
+    "static/js/main.1eefbe19.js"
   ]
 }
