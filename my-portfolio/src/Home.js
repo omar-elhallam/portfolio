@@ -69,7 +69,7 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
+          <CosmicTitle text="Crafting Immersive Experiences through Code & Design" />
         </div>
         <div id="whoami"><WhoAmI /></div>
       </section>

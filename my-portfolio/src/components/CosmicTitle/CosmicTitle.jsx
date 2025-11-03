@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CosmicTitle.css';
 
 const CosmicTitle = ({ text }) => {
-  const [firstLine, secondLine] = text.split(' with ');
+  const [firstLine, secondLine] = text.split(' through ');
   const [showFirstLine, setShowFirstLine] = useState(false);
   const [showSecondLine, setShowSecondLine] = useState(false);
 
@@ -39,7 +39,7 @@ const CosmicTitle = ({ text }) => {
     <h1 className="cosmic-title">
       {wrapWithSpans(firstLine, showFirstLine)}
       <br />
-      {wrapWithSpans('with ', showSecondLine)}
+      {wrapWithSpans('through ', showSecondLine)}
       {wrapWithSpans(secondLine, showSecondLine)}
     </h1>
   );
