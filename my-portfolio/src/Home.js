@@ -34,6 +34,21 @@ function Home() {
         if (starsMidground) starsMidground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.25}px)`;
         if (starsForeground) starsForeground.style.backgroundPosition = `center calc(100px + ${scrollY * 0.4}px)`;
       }
+
+      // Fade to dark effect
+      const darkOverlay = document.getElementById("dark-overlay");
+      if (darkOverlay) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (window.scrollY / maxScroll);
+        
+        // Start fading earlier and make it more pronounced
+        // Starts at 30% scroll and reaches max at 80% scroll
+        let opacity = 0;
+        if (scrollPercentage > 0.3) {
+          opacity = Math.min((scrollPercentage - 0.3) / 0.5 * 0.9, 0.9);
+        }
+        darkOverlay.style.opacity = opacity;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -49,6 +64,7 @@ function Home() {
       <div className="background-layer" id="nebula"></div>
       <div className="background-layer" id="stars-midground"></div>
       <div className="background-layer" id="stars-foreground"></div>
+      <div id="dark-overlay" className="dark-overlay"></div>
 
       {/* Hero Section */}
       <section className="hero">
@@ -56,15 +72,16 @@ function Home() {
           <CosmicTitle text="Crafting Immersive Experiences with Code & Design" />
         </div>
         <div id="whoami"><WhoAmI /></div>
-
-        <div className="hero-visuals" id="projects">
-          {/* Glowing Cards */}
-          <GlowingCards />
-        </div>
       </section>
 
       {/* Card Stack Navigation */}
       <CardStackNav />
+
+      {/* Projects Section */}
+      <section className="hero-visuals" id="projects">
+        {/* Glowing Cards */}
+        <GlowingCards />
+      </section>
 
       {/* Education Timeline */}
       <section className="education-section" style={{ display: 'none' }}>

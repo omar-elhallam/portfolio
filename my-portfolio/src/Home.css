@@ -167,6 +167,20 @@ body {
     background-position: center center;
   }
 
+  /* Dark overlay that fades in as you scroll */
+  .dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000d2;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.05s linear;
+  }
+
   #nebula {
     background-image: url("./assets/images/background/layers2/Nebula Blue.png");
     z-index: 1;
@@ -226,7 +240,7 @@ body {
 
   /* Add extra content to enable scrolling */
   .extra-content {
-    height: 200vh; /* Simulate additional content for scrolling */
+    height: 80vh; /* Simulate additional content for scrolling */
   }
 
   .test-background-container {

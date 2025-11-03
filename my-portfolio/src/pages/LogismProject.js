@@ -133,7 +133,7 @@ function LogismProject() {
             Project Overview
           </h2>
           <p className="project-description">
-            This ambitious project represents a complete journey through computer architecture—from the lowest level 
+            This ambitious project represents a complete journey through computer architecture - from the lowest level 
             of digital logic gates to high-level assembly programming. Over the course of one semester, I designed 
             and implemented a fully functional processor in Logism capable of executing complex programs, complete 
             with a custom C++ assembler that translates human-readable assembly code into machine binary instructions.
@@ -249,7 +249,7 @@ function LogismProject() {
           <p className="section-description">
             The assembler I coded is a two-pass program that translates MIPS assembly language into binary machine code. 
             It processes assembly files, identifies and stores labels in symbol tables, handles static memory 
-            directives, and generates two separate binary output files—one for instructions and one for static data—
+            directives, and generates two separate binary output files - one for instructions and one for static data -
             ready to be loaded directly into Logisim memory modules.
           </p>
 
@@ -357,7 +357,7 @@ main:
                 <h3>Game Development in MIPS</h3>
                 <p>Created playable games written entirely in MIPS assembly, including a fully functional Pong 
                 implementation. Integrated joystick input handling, collision detection, score tracking, and 
-                graphical rendering—all running on the custom hardware.</p>
+                graphical rendering - all running on the custom hardware.</p>
               </div>
             </div>
           </div>
@@ -463,7 +463,7 @@ main:
               <div className="feature-icon">🎮</div>
               <h3>Interactive Pong Game</h3>
               <p>Fully playable Pong implementation running on custom CPU. Features joystick input, 
-              display output, collision detection, and score tracking—all implemented in MIPS assembly 
+              display output, collision detection, and score tracking - all implemented in MIPS assembly 
               and executed on custom hardware.</p>
             </div>
 

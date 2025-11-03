@@ -654,19 +654,7 @@ function ServicePlatform() {
               <div className="challenges-list">
                 <div className="challenge-item">
                   <div className="challenge-header">
-                    <h3>🔌 Supabase Integration</h3>
-                    <span className="difficulty-badge medium">Medium</span>
-                  </div>
-                  <p>
-                    Initial database configuration and connection with NestJS required significant work, 
-                    especially for access rights management and credential handling. 
-                    <strong> Solution:</strong> Carefully configured environment variables and SSL settings.
-                  </p>
-                </div>
-
-                <div className="challenge-item">
-                  <div className="challenge-header">
-                    <h3>🔐 Authentication & Security</h3>
+                    <h3>� Authentication & Security</h3>
                     <span className="difficulty-badge high">High</span>
                   </div>
                   <p>
@@ -674,19 +662,6 @@ function ServicePlatform() {
                     expiration and token refresh mechanisms. 
                     <strong> Solution:</strong> Implemented automatic token refresh logic and proper error 
                     handling for expired sessions.
-                  </p>
-                </div>
-
-                <div className="challenge-item">
-                  <div className="challenge-header">
-                    <h3>📱 Flutter-API Integration</h3>
-                    <span className="difficulty-badge medium">Medium</span>
-                  </div>
-                  <p>
-                    Integration between Flutter and REST endpoints wasn't immediate. Required handling HTTP errors, 
-                    timeout cases, and ensuring data model compatibility. 
-                    <strong> Solution:</strong> Created consistent data models, implemented robust error handling, 
-                    and added retry mechanisms.
                   </p>
                 </div>
 
@@ -700,6 +675,31 @@ function ServicePlatform() {
                     fell on me without team support. 
                     <strong> Solution:</strong> Extensive research, thorough documentation, and incremental development 
                     with regular testing.
+                  </p>
+                </div>
+
+                <div className="challenge-item">
+                  <div className="challenge-header">
+                    <h3>� Supabase Integration</h3>
+                    <span className="difficulty-badge medium">Medium</span>
+                  </div>
+                  <p>
+                    Initial database configuration and connection with NestJS required significant work, 
+                    especially for access rights management and credential handling. 
+                    <strong> Solution:</strong> Carefully configured environment variables and SSL settings.
+                  </p>
+                </div>
+
+                <div className="challenge-item">
+                  <div className="challenge-header">
+                    <h3>📱 Flutter-API Integration</h3>
+                    <span className="difficulty-badge medium">Medium</span>
+                  </div>
+                  <p>
+                    Integration between Flutter and REST endpoints wasn't immediate. Required handling HTTP errors, 
+                    timeout cases, and ensuring data model compatibility. 
+                    <strong> Solution:</strong> Created consistent data models, implemented robust error handling, 
+                    and added retry mechanisms.
                   </p>
                 </div>
 

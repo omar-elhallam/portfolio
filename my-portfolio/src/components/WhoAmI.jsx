@@ -22,9 +22,9 @@ function WhoAmI() {
   ];
 
   const aboutMeDescription = [
-    "> I’m Omar El Hallam, a passionate software developer with a strong background in computer science and hands-on experience across web, systems, and game development. I enjoy turning ideas into functional, elegant solutions — whether through C++ backends, React interfaces, or Python automation.",
-    "> I’ve worked on a variety of projects, from building an assembler and CPU on Logisim to developing interactive web platforms and SharePoint solutions during my internships at Allianz Maroc and Exakis Nelite.",
-    "> Curious, detail-oriented, and creative, I aim to craft technology that’s both efficient and meaningful — blending technical precision with a design-driven mindset."
+    "> I am Omar El Hallam - a passionate software developer with a strong background in computer science and hands-on experience across web, systems, and game development. Curious, detail-oriented, and creative.",
+    "> Thanks to a diverse expertise - going from building an assembler and CPU on Logisim to developing interactive web platforms and SharePoint solutions - I aim to craft technology that's both efficient and meaningful - blending technical precision with a design-driven mindset.",
+    "> I'm dedicated to turning ideas into functional, elegant solutions; through C++ backends, React interfaces, or Python automation."
   ];
 
 	useEffect(() => {
@@ -120,7 +120,7 @@ function WhoAmI() {
           className="who-am-i-button"
           onClick={handleButtonClick}
         >
-          Who am I?
+          Who's behind this?
         </button>
       )}
 
