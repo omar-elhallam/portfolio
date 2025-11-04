@@ -8,7 +8,7 @@ const MyWork = () => {
       <div className="mywork-section">
         <h2>Professional Experience</h2>
         <div className="mywork-card">
-          <h3>Allianz Maroc</h3>
+          <h3>Alliances</h3>
           <p>June 2023 – August 2023</p>
           <ul>
             <li>Collaborated with the IT project manager to understand database and network systems management.</li>
