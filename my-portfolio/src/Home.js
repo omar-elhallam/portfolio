@@ -214,7 +214,7 @@ function Home() {
           <div className="experience-item">
             <div className="experience-header">
               <div className="company-info">
-                <h3>Allianz Morocco</h3>
+                <h3>Alliances</h3>
                 <p className="position">Data & Business Intelligence Intern</p>
               </div> 
               <div className="experience-period">Jun 2023 - Aug 2023</div>
