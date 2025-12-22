@@ -116,12 +116,12 @@ function WhoAmI() {
   return (
     <div className={`who-am-i-container ${state}`}>
       {showButton && (
-        <button
-          className="who-am-i-button"
-          onClick={handleButtonClick}
-        >
-          Who's behind this?
-        </button>
+        <div className="who-am-i-button">
+          <span className="button-text" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>
+            Who's behind this?
+          </span>
+          <span className="click-indicator">👆</span>
+        </div>
       )}
 
       {showTerminal && (

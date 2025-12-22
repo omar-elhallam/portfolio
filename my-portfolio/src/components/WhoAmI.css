@@ -52,14 +52,44 @@
 	font-size: 2.5rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	cursor: pointer;
+	cursor: default;
 	text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea40;
-	animation: jump 3s infinite, glowPulse 2s infinite alternate;
+	animation: glowPulse 2s infinite alternate;
 	transition: transform 0.3s ease-out;
+	position: relative;
+	display: inline-block;
 }
 
-.who-am-i-button:hover {
+.button-text {
+	display: inline-block;
+	animation: jump 3s infinite;
+}
+
+.who-am-i-button:hover .button-text {
     transform: scale(1.5);
+}
+
+.click-indicator {
+	position: absolute;
+	top: -50px;
+	right: -50px;
+	font-size: 1.2rem;
+	opacity: 0.7;
+	animation: clickPulse 2s ease-in-out infinite;
+	filter: grayscale(0.3);
+	transform: rotate(-135deg);
+	transform-origin: center;
+}
+
+@keyframes clickPulse {
+	0%, 100% {
+		transform: rotate(-135deg) scale(1);
+		opacity: 0.7;
+	}
+	50% {
+		transform: rotate(-135deg) scale(1.2);
+		opacity: 1;
+	}
 }
 
 /* Jump animation */
@@ -161,6 +191,11 @@
     font-size: 2rem;
   }
 
+  .click-indicator {
+    font-size: 1rem;
+    right: -20px;
+  }
+
   .terminal {
     width: 65vw;
     height: 50vh;
@@ -186,6 +221,12 @@
   .who-am-i-button {
     font-size: 1.8rem;
     letter-spacing: 1px;
+  }
+
+  .click-indicator {
+    font-size: 0.9rem;
+    right: -18px;
+    top: -12px;
   }
 
   .terminal {

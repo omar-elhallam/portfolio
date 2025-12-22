@@ -3,6 +3,7 @@ import './Header.css';
 import emailIcon from './email_icon.svg';
 import githubIcon from './github_icon.svg';
 import linkedinIcon from './linkedin_icon.svg';
+import whatsappIcon from './whatsapp_icon.svg';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -94,6 +95,17 @@ function Header() {
           title="LinkedIn Profile"
         >
           <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
+        </a>
+        <a 
+          href="https://wa.me/212669809246" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="social-link fade-in-el" 
+          style={{ animationDelay: '0.8s' }}
+          aria-label="WhatsApp"
+          title="WhatsApp"
+        >
+          <img src={whatsappIcon} alt="WhatsApp" className="social-icon" />
         </a>
       </div>
     </header>
