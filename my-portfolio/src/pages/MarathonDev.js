@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import bonkusImage from '../assets/images/projects/Bonkus_3_50.png';
 import bonkusImage2 from '../assets/images/projects/marathondev/bonkus_games.gif';
 import bonkusVideo from '../assets/images/projects/marathondev/bonkus_navigation.mp4';
 import '../styles/ProjectPage.css';
 
 function MarathonDev() {
+  const navigate = useNavigate();
   const [lightboxImage, setLightboxImage] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -57,8 +59,17 @@ function MarathonDev() {
   return (
     <div className="project-page">
       {/* Back Button */}
-      <button className="back-button" onClick={() => window.history.back()}>
+      <button className="back-button" onClick={() => navigate('/')}>
         ← Back
+      </button>
+
+      {/* Floating Back Button */}
+      <button 
+        className={`scroll-top-button ${!showScrollTop ? 'hidden' : ''}`}
+        onClick={() => navigate('/')}
+        style={{ left: '20px', right: 'auto' }}
+      >
+        ←
       </button>
 
       {/* Scroll to Top Button */}
@@ -705,7 +716,7 @@ function MarathonDev() {
             <button className="cta-button primary" onClick={() => window.open('https://atome-marathon-dev.netlify.app/', '_blank')}>
               View Live Demo →
             </button>
-            <button className="cta-button secondary" onClick={() => window.history.back()}>
+            <button className="cta-button secondary" onClick={() => navigate('/')}>
               ← Back to Projects
             </button>
           </div>

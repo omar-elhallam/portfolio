@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import computerImage from '../assets/images/projects/logism/computer.png';
 import cpuImage from '../assets/images/projects/logism/cpu.png';
 import aluImage from '../assets/images/projects/logism/alu.png';
@@ -8,6 +9,7 @@ import '../styles/ProjectPage.css';
 import '../styles/LogismProject.css';
 
 function LogismProject() {
+  const navigate = useNavigate();
   const [lightboxImage, setLightboxImage] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -59,8 +61,17 @@ function LogismProject() {
   return (
     <div className="project-page">
       {/* Back Button */}
-      <button className="back-button" onClick={() => window.history.back()}>
+      <button className="back-button" onClick={() => navigate('/')}>
         ← Back
+      </button>
+
+      {/* Floating Back Button */}
+      <button 
+        className={`scroll-top-button ${!showScrollTop ? 'hidden' : ''}`}
+        onClick={() => navigate('/')}
+        style={{ bottom: '90px'}}
+      >
+        ←
       </button>
 
       {/* Scroll to Top Button */}
@@ -561,7 +572,7 @@ main:
           <h2>Interested in the Technical Details?</h2>
           <p>This project demonstrates comprehensive understanding of computer architecture from transistors to assembly language. 
           Feel free to reach out for more in-depth discussion about the implementation or to see the complete source code.</p>
-          <button className="cta-button" onClick={() => window.history.back()}>
+          <button className="cta-button" onClick={() => navigate('/')}>
             ← Back to Projects
           </button>
         </div>

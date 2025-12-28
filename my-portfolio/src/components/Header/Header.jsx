@@ -4,6 +4,7 @@ import emailIcon from './email_icon.svg';
 import githubIcon from './github_icon.svg';
 import linkedinIcon from './linkedin_icon.svg';
 import whatsappIcon from './whatsapp_icon.svg';
+import profilePic from '../../assets/images/omar.jfif';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,10 +45,13 @@ function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}${animate ? ' header-fade-in' : ''}`}>
       {/* Left side - Name/Brand */}
       <div className="header-brand fade-in-el" style={{ animationDelay: '0.1s' }}>
-        <span className="header-name">Omar El Hallam</span>
-        {scrolled && (
-          <span className="header-tagline">Full-Stack Developer</span>
-        )}
+        <img src={profilePic} alt="Omar El Hallam" className="header-profile-pic" />
+        <div className="header-brand-text">
+          <span className="header-name">Omar El Hallam</span>
+          {scrolled && (
+            <span className="header-tagline">Full-Stack Developer</span>
+          )}
+        </div>
       </div>
 
       {/* Center - Navigation */}
