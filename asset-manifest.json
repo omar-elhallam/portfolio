@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.70140d2b.css",
-    "main.js": "/portfolio/static/js/main.d4a00438.js",
+    "main.css": "/portfolio/static/css/main.34dcdf78.css",
+    "main.js": "/portfolio/static/js/main.0d01be4f.js",
     "static/js/453.acca0757.chunk.js": "/portfolio/static/js/453.acca0757.chunk.js",
     "static/media/Nebula Blue.png": "/portfolio/static/media/Nebula Blue.79be7b430477cef6eded.png",
     "static/media/bonkus_navigation.mp4": "/portfolio/static/media/bonkus_navigation.3ff8ac1e24c8baeb87d7.mp4",
@@ -11,6 +11,7 @@
     "static/media/control.png": "/portfolio/static/media/control.e81d4c641058bdcba4e6.png",
     "static/media/regfile.png": "/portfolio/static/media/regfile.c82cc050c5cf8471a12f.png",
     "static/media/cpu.png": "/portfolio/static/media/cpu.8f8001395a9a376e4e85.png",
+    "static/media/omar.jfif": "/portfolio/static/media/omar.5b02cbd6fb60c36d148e.jfif",
     "static/media/Bonkus_3_50.png": "/portfolio/static/media/Bonkus_3_50.58d6b81903d77298fb73.png",
     "static/media/computer.png": "/portfolio/static/media/computer.129cc047167891e08a2f.png",
     "static/media/alu.png": "/portfolio/static/media/alu.19023b39b609e811c114.png",
@@ -19,12 +20,12 @@
     "index.html": "/portfolio/index.html",
     "static/media/linkedin_icon.svg": "/portfolio/static/media/linkedin_icon.27859f9678a39c99c65dec87b4d37ee3.svg",
     "static/media/email_icon.svg": "/portfolio/static/media/email_icon.e820cda3d8a4c23eff6baa60d6a1863b.svg",
-    "main.70140d2b.css.map": "/portfolio/static/css/main.70140d2b.css.map",
-    "main.d4a00438.js.map": "/portfolio/static/js/main.d4a00438.js.map",
+    "main.34dcdf78.css.map": "/portfolio/static/css/main.34dcdf78.css.map",
+    "main.0d01be4f.js.map": "/portfolio/static/js/main.0d01be4f.js.map",
     "453.acca0757.chunk.js.map": "/portfolio/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70140d2b.css",
-    "static/js/main.d4a00438.js"
+    "static/css/main.34dcdf78.css",
+    "static/js/main.0d01be4f.js"
   ]
 }
